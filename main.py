@@ -11,8 +11,8 @@ def format_prompt(question: str, subject: str) -> str:
     """
     Format the prompt for Claude to extract academic concepts.
     """
-    return f"""Given the question: "{question}" from the subject "{subject}", identify the core academic or historical concept(s) it is testing.
-Respond with a semicolon-separated list of concepts."""
+    return f"""Given the question: "{question}" from the subject "{subject}", identify/extract the top 3 underlying concepts being tested in question (e.g., "Indus Valley Civilization", "Gupta Period Literature", "Ashokan Edicts" etc).
+Respond with a semicolon-separated list of concepts only. example of output : "Indus Valley Civilization"; "Water harvesting and management"; "Ancient architecture" only three name no other single word"""
 
 def main():
     parser = argparse.ArgumentParser(description="Intern Task: Question to Concept Mapping")
